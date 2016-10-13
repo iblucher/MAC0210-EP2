@@ -1,0 +1,1 @@
+calculateError('lena.png', 'lena.png');
