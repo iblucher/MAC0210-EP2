@@ -1,0 +1,1 @@
+decompress('compressed.png', 1, 7)

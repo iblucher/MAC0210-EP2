@@ -7,7 +7,7 @@ function decompress(compressedImg, method, k)
   imgG = img(:,:,2);
   imgB = img(:,:,3);
   
-  if method == 1: %bilinear
+  if method == 1 %bilinear
     for i=1:a
       for j=1:a
         %calcular pontos dados das bordas
@@ -33,9 +33,10 @@ function decompress(compressedImg, method, k)
         X = linsolve(A,B);
         
         %preencher os pixels criados com a expansao do quadrado
-        for k=(2:(k+1)
-          for l=2:(k+1)
-            S(k,l) = X(1,1)+X(2,1)*k+X(3,1)*l+X(4,1)*k*l;
+        for k=(1:(k+2)
+          for r=(1:(k+2)) 
+            if (S(k,r) != fq00 || S(k,r) != fq01 || S(k,r) != fq10 || S(k,r) != fq11)
+            S(k,r) = X(1,1)+X(2,1)*k+X(3,1)*r+X(4,1)*k*r;
           endfor
         endfor
      endfor
