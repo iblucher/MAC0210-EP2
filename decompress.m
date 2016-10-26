@@ -14,27 +14,23 @@ function decompress(compressedImg, method, k, h)
         fq10 = img(i+h, j, :);
         fq01 = img(i, j+h, :);
         fq11 = img(i+h, j+h, :); 
-        
-        x = i;
-        y = j;
-        z = i+h;
-        w = j+h;
     
         A = [1, 0, 0, 0; 1, 0, h, 0; 1, h, 0, 0; 1, h, h, h.^2];
 
         %preencher os pixels criados com a expansao do quadrado
-        for p=(x:z)
-          for r=(y:w) 
-            %obter tres matrizes dos canais RGB da imagem comprimida
-            for s = 1:3
+        for s = i:(i+h)
+          for p=j:(j+h)
+            for r=y:w
               B = [fq00(s); fq01(s); fq10(s); fq11(s)];
-                
-            
+              X = linsolve(A, B);
+              D(p,r) = X(1,1) + X(2,1)*(p - i) + X(3,1)*(r - j) + X(4,1)*(p - i)*(r - j);
+            endfor
           endfor
         endfor
-     endfor
-   endfor 
-        
+      endfor
+    endfor
+
+          
     
   else %bicubic
 endfunction
