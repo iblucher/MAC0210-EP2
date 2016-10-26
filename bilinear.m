@@ -1,1 +1,1 @@
-decompress('compressed.png', 1, 7)
+decompress('compress.png', 1, 3, 2)
