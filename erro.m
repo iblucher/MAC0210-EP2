@@ -1,1 +1,1 @@
-calculateError('lena.png', 'lena.png');
+calculateError('lena.png', 'decompress.png');

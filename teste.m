@@ -1,2 +1,2 @@
-img = imread('lena.tiff');
+img = imread('lena.png');
 compress(img, 7);
