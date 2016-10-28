@@ -1,4 +1,4 @@
-function decompress(compressedImg, method, k, h)
+  function decompress(compressedImg, method, k, h)
   img = imread(compressedImg);
   [a, l, p] = size(img);
   a
