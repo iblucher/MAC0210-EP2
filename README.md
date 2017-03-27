@@ -1,2 +1,2 @@
 # MAC0210
-Exercícios-programa para a disciplina "Laboratório de Métodos Numéricos"
+Exercício-programa 2 para a disciplina "Laboratório de Métodos Numéricos"
